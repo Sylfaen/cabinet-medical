@@ -1,0 +1,27 @@
+<h1>Infirmier</h1>
+<h2>Liste des patients par infirmier : </h2>
+<div class="listePatient">
+	 <table *ngFor='let nurse of nurses; trackBy: index;'>
+	 	<h4>{{nurse.firstname}} {{nurse.name}}</h4>
+	  <tr>
+	    <th>Prénom</th>
+	    <th>Nom</th>
+	    <th>Sexe</th>
+	    <th>Date de naissance</th>
+	    <th>Numéro de sécurité sociale</th>
+	    <th>Adresse</th>
+	    <th>Pathologie</th>
+	  </tr>
+	  <tr *ngFor='let patient of patients; trackBy: index;'>
+	  	<ng-container *ngIf="patientOfNurse(nurse.id, patient.referentNurse)">
+	    <td>{{patient.firstname}}</td>
+	    <td>{{patient.name}}</td>
+	    <td>{{patient.sex}}</td>
+	    <td>{{patient.birthday}}</td>
+	    <td>{{patient.secuId}}</td>
+	    <td>{{patient.address}}</td>
+	    <td>{{patient.pathology}}</td>
+		</ng-container>
+	  </tr>
+	</table>
+</div>

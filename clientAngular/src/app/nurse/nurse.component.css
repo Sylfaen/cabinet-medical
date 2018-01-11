@@ -1,0 +1,9 @@
+.listePatient table {
+	width: 50%;
+	border-collapse: collapse;
+}
+
+.listePatient th, td{
+	border: 1px solid black;
+	text-align: center;
+}
